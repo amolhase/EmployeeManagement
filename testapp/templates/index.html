@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+<head>
+    <style>
+     body
+     {
+background-repeat:no-repeat;
+background-size:cover;
+background-size:1115px 600px;
+background-position:125px 55px;
+}
+</style>
+</head>
+<body background="https://i.pinimg.com/originals/69/fd/5b/69fd5b70002dc510d993ed6357b7d07d.png">
+<form method="POST" action="add">
+    {% csrf_token %}
+    <label>ID:</label>
+    <div>{{form.eid}}</div>
+    <label>Name:</label>
+    <div>{{form.ename}}</div>
+    <label>Email:</label>
+    <div>{{form.eemail}}</div>
+    <label>Contact:</label>
+    <div>{{form.econtact}}</div>
+    <div>
+        <button type="submit">ADD</button>
+    </div>
+</form>
+</body>
+</html>
+{% endblock %}

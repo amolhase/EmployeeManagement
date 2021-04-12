@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Employees Information</h1><hr>
+{% if employee %}
+
+
+
+<table class="table table-striped">
+    <thead>
+    <th>Employee No</th>
+    <th>Employee Name</th>
+    <th>Employee Email</th>
+    <th>Employee Contact</th>
+    </thead>
+    {% for emp in employee %}
+    <tr>
+        <td>{{emp.eid}}</td>
+        <td>{{emp.ename}}</td>
+        <td>{{emp.eemail}}</td>
+        <td>{{emp.econtact}}</td>
+        <td>
+            <a href="edit/{{emp.id}}">Edit</a>
+        </td>
+        <td>
+            <a href="delete/{{emp.id}}">Delete</a>
+        </td>
+    </tr>
+    {%endfor%}
+</table>
+{%else%}
+<p>No employees record found!</p>
+{%endif%}
+
+{% endblock %}

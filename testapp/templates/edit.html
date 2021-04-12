@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<html>
+<head>
+    <style>
+     body
+     {
+background-repeat:no-repeat;
+background-size:cover;
+background-size:1115px 600px;
+background-position:125px 55px;
+}
+</style>
+</head>
+<body background="https://i.pinimg.com/originals/69/fd/5b/69fd5b70002dc510d993ed6357b7d07d.png">
+
+<form method="POST" action="/update/{{employee.id}}">
+
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>
+                <input name="eid" required value="{{employee.eid}}">
+            </td>
+        <tr>
+            <td>
+                <input name="ename" required value="{{employee.ename}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="eemail" required value="{{employee.eemail}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="econtact" required value="{{employee.econtact}}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Update</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
+{% endblock %}
